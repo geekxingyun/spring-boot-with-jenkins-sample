@@ -1,5 +1,7 @@
 spring:
   application:
     name: spring-boot-with-jenkins-maven-sample-dev-environment
+
 server:
   port: 6001
+  address: 127.0.0.1
