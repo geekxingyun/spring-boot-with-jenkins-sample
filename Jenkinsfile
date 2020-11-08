@@ -8,7 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew clean'
-                sh './gradlew task build bootJar'
+                //sh './gradlew task build bootJar'
+                sh './gradlew assemble'
             }
         }
         stage('Test') {
