@@ -21,7 +21,7 @@ pipeline {
                         timeout(time: 3, unit: 'MINUTES') {
                             retry(5) {
                                 sh 'java -jar ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar'
-                                //sh 'sudo chmod 777 ./start-deploy.sh'
+                                // sh 'sudo chmod 777 ./start-deploy.sh'
                                 //sh './start-deploy.sh'
                             }
                         }
