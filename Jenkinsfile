@@ -24,7 +24,7 @@ pipeline {
                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh "cd '/Users/zhaoqingfeng/documents/deploy/dev/'"
-                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/dev/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /&'
+                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/dev/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
 //                                    sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
 //                                 sh 'chmod 777 ./start-deploy.sh'
 //                                 sh './start-deploy.sh'
