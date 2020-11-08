@@ -25,6 +25,7 @@ pipeline {
                                 sh 'cd /Users/zhaoqingfeng/documents/test'
                                 sh 'nohup java -jar spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
                                 sh 'jps -l'
+
                                 //sh 'chmod 777 ./start-deploy.sh'
                                 //sh './start-deploy.sh'
                                 //sh 'jps -l'
