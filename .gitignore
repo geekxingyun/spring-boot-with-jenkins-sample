@@ -35,3 +35,5 @@ build/
 
 ### Mac OSX ###
 .DS_Store
+
+nohup.out
