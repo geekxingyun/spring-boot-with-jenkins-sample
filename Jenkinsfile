@@ -20,6 +20,7 @@ pipeline {
                     steps {
                         timeout(time: 3, unit: 'MINUTES') {
                             retry(5) {
+                                sh 'sudo chmod 777 ./start-deploy.sh'
                                 sh './start-deploy.sh'
                             }
                         }
