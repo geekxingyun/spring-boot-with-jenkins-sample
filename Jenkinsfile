@@ -23,8 +23,9 @@ pipeline {
                             retry(1) {
 //                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
 //                                 sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
-                                sh 'chmod 777 ./start-deploy.sh'
-                                sh './start-deploy.sh'
+                                   sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
+//                                 sh 'chmod 777 ./start-deploy.sh'
+//                                 sh './start-deploy.sh'
                                 sh 'jps -l'
                                 sh 'echo deploy success'
                             }
