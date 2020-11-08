@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
                     steps {
                         timeout(time: 15, unit: 'MINUTES') {
-                            retry(5) {
+                            retry(1) {
                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cd /Users/zhaoqingfeng/documents/deploy/dev'
