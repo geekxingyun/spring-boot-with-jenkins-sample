@@ -23,6 +23,7 @@ pipeline {
                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cd /Users/zhaoqingfeng/documents/deploy/'
+                                sh 'pwd > currentPath.log'
                                 sh 'chmod 777 ./start-deploy.sh'
                                 sh './start-deploy.sh'
                                 sh 'jps -l'
