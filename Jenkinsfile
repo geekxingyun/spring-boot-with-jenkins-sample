@@ -7,9 +7,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn --version'
                 sh './gradlew clean'
-                sh './gradlew assemble'
+                sh './gradlew task build bootJar'
             }
         }
         stage('Test') {
@@ -19,9 +18,8 @@ pipeline {
         }
         stage('Deploy') {
                     steps {
-                        timeout(time: 3, unit: 'MINUTES') {
+                        timeout(time: 15, unit: 'MINUTES') {
                             retry(5) {
-                                //sh 'javaw -jar ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar'
                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
                                 sh 'cd /Users/zhaoqingfeng/documents/deploy/'
