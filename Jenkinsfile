@@ -28,7 +28,6 @@ pipeline {
 //                                 sh 'chmod 777 ./start-deploy.sh'
 //                                 sh './start-deploy.sh'
                                 sh 'jps -l'
-                                sh 'netstat -ntpl'
                                 sh 'echo deploy success'
 
                             }
