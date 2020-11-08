@@ -22,9 +22,11 @@ pipeline {
                         timeout(time: 15, unit: 'MINUTES') {
                             retry(1) {
                                 sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/dev/'
-                                sh 'cp ./start-deploy.sh /Users/zhaoqingfeng/documents/deploy/dev/'
-                                sh "cd '/Users/zhaoqingfeng/documents/deploy/dev/'"
-                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/dev/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
+                                sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/test/'
+                                sh 'cp ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar /Users/zhaoqingfeng/documents/deploy/uat/'
+                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/dev/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev &'
+                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/test/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=test &'
+                                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /Users/zhaoqingfeng/documents/deploy/uat/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=uat &'
 //                                    sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar ./build/libs/spring-boot-with-jenkins-sample-0.0.1-SNAPSHOT.jar &'
 //                                 sh 'chmod 777 ./start-deploy.sh'
 //                                 sh './start-deploy.sh'
